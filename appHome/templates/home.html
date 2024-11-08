@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block titulo %} HOME {% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block conteudo %}
+    <div class="main-container">
+        <div class="main-text">
+            <h1>Amplie suas oportunidades de carreira com python</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi qui officia id earum rerum quaerat
+                inventore dignissimos perspiciatis adipisci molestiae facilis blanditiis tempore ex, suscipit incidunt a
+                nostrum dolore reprehenderit error at eum ab odit officiis architecto. Fugit quis praesentium accusamus
+                quidem quisquam minima, iste at, magni vitae delectus odio.</p>
+            <a href="{% url 'add_user' %}"><button type="button" class="btn btn-primary">Cadastrar Usúario</button></a>
+            <table>
+                {% for user in users %}
+                <tr>
+                    <td>
+                        <h2>{{user.name}}</h2>
+                    </td>
+                    <td>
+                        <h2>{{user.lastname}}</h2>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="img-container2">
+            <img src="../static/images/python.png" alt="python" style="width: 50rem;">
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

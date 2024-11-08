@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block titulo %} HOME {% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block conteudo %}
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="text-center">
+      {% if users %}
+        <h1>Usuários Cadastrados</h1>
+        <ul class="list-group list-group-flush">
+          {% for user in users %}
+            <li class="list-group-item d-flex justify-content-center">
+              <span class="mx-2">{{ user.name }}</span>
+              <span class="mx-2">{{ user.lastname }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+          <h1>Nenhum usuário cadastrado no momento.</h1>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

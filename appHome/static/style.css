@@ -1,0 +1,59 @@
+body {
+  background-color: red;
+}
+
+h1{
+    color: red;
+}
+
+.navbar {
+    background-color: transparent;
+    margin: 5px 50px;
+    position: fixed;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.collapse-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-p {
+    padding: 5px 35px;
+    background-color: rgb(64, 91, 242);
+    border: none;
+    border-radius: 30px;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.btn-p a {
+    color: aliceblue;
+    margin: 0;
+    font-size: 30px;
+}
+
+.main-container {
+    margin: 40px 20rem 40px 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.152);
+    padding-bottom: 5rem;
+    min-height: 100vh;
+}
+
+.main-text h1 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+
+}
