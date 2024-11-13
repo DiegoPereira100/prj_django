@@ -21,13 +21,24 @@
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse-container collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="{% url 'list_users' %}">Usuários Cadastrados</a>
+      <div class="nav-container">
+        <div class="collapse-container collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="{% url 'appHome' %}">Home</a>
+          </div>
+          <div class="navbar-nav">
+            <a class="nav-link" href="#">Sobre</a>
+          </div>
+          <div class="navbar-nav">
+            <a class="nav-link" href="{% url 'list_courses' %}">Cursos</a>
+          </div>
+          <div class="navbar-nav">
+            <a class="nav-link" href="#">Contato</a>
+          </div>
         </div>
-        <div class="img-container">
-          <img src="../static/images/pythonlogo.webp" alt="logo" style="width: 60px;">
-        </div>
+      </div>
+      <div class="img-container">
+        <img src="../static/images/pythonlogo.webp" alt="logo" style="width: 60px;">
       </div>
     </div>
   </nav>
@@ -55,14 +66,22 @@
       <div class="collumn-2">
         <p style="font-weight: bold;">Início</p>
         <p>Home</p>
-        <p>Cursos</p>
+        <a href="{% url 'list_courses' %}">
+          <p>Cursos</p>
+        </a>
         <p>Baixar App</p>
       </div>
       <div class="collumn-3">
         <p style="font-weight: bold;">Sobre nós</p>
-        <p>Trajetória</p>
-        <p>Contato</p>
-        <p>Blog</p>
+        <a href="{% url 'list_users' %}">
+          <p>Usuários</p>
+        </a>
+        <a href="{% url 'add_user' %}">
+          <p>Adicionar Usuário</p>
+        </a>
+        <a href="{% url 'add_course' %}">
+          <p>Adicionar Curso</p>
+        </a>
       </div>
       <div class="collumn-4">
         <p style="font-weight: bold;">Suporte</p>

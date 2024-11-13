@@ -1,5 +1,5 @@
 body {
-  background-color: red;
+    background-color: red;
 }
 
 h1{
@@ -12,14 +12,18 @@ h1{
     position: fixed;
 }
 
-.navbar-nav {
+.nav-container {
     display: flex;
-    gap: 25px;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .collapse-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
 }
 
 .btn-p {
@@ -52,8 +56,89 @@ h1{
     font-weight: bold;
 }
 
+.main-desc {
+    font-weight: 400;
+}
+
+.course-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-body {
+    text-align: left;
+    padding: 40px;
+}
+
+.course-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.course-author {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.course-duration {
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.course-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    display: block;              
+    width: 100%;                
+    padding: 15px 0;             
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    text-align: center;          
+}
+
+.btn-buy:hover {
+    background-color: #218838;
+}
+
+.btn-buy:active {
+    background-color: #1e7e34;
+}
+
 .footer {
     display: flex;
     justify-content: space-evenly;
+}
 
+.collumn-2 a,
+.collumn-3 a {
+    text-decoration: none; 
+    color: inherit;  
+}
+
+p, a {
+    color: rgba(0, 0, 0, 0.63);
+    font-weight: 300;
 }

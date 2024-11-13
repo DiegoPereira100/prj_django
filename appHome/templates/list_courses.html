@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block titulo %} HOME {% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block conteudo %}
+<div class="d-flex justify-content-center align-items-center min-vh-100 ms-5 me-5">
+  <div class="text-center">
+    {% if courses %}
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for course in courses %}
+      <div class="col">
+        <div class="card course-card"> <!-- Adiciona a classe course-card aqui -->
+          <div class="card-body text-start">
+            <h5 class="card-title course-name">{{ course.name }}</h5>
+            <p class="card-text course-author">{{ course.autor }}</p>
+            <p class="card-text course-duration">{{ course.duration }}</p>
+            <p class="card-text course-price">R$ {{ course.price }}</p>
+            <a href="#" class="btn btn-primary btn-buy">Comprar</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <h1>Nenhum curso cadastrado no momento.</h1>
+    {% endif %}
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,5 +1,5 @@
 from django import forms
-from appHome.models import Usuario
+from appHome.models import Usuario, Curso
 
 class FormUser(forms.ModelForm):
   class Meta:
@@ -8,3 +8,7 @@ class FormUser(forms.ModelForm):
     #campos do formulario
     fields = ('name', 'lastname')
 
+class FormCourse(forms.ModelForm):
+  class Meta:
+    model = Curso
+    fields = ('name', 'autor', 'duration', 'price')
