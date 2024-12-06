@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Login{% endblock %}
+
+{% block conteudo %}
+
+<div class="container form-container">
+  <div class="form-container-card">
+    <h1 class="text-center main-text">Área Restrita</h1>
+    <form action="{% url 'makeLogin' %}" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        {{ formLogin.as_p }}
+      </div>
+      <div class="d-grid gap-2">
+        <input type="submit" value="Entrar" class="btn btn-primary btn-submit">
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

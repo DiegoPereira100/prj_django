@@ -15,6 +15,18 @@
             <li class="list-group-item d-flex justify-content-center">
               <span class="mx-2">{{ user.name }}</span>
               <span class="mx-2">{{ user.lastname }}</span>
+              <div class="btn-actions-users">
+                <span
+                ><a href="{% url 'delete_user' user.id %}">
+                  Excluir
+                </a>
+                            </span>
+                <span>
+                  <a href="{% url 'edit_user' user.id %}">
+                    Editar
+                  </a>
+                </span>
+              </div>
             </li>
           {% endfor %}
         </ul>

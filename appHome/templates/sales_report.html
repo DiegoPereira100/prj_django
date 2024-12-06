@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Relatório de Vendas {% endblock %}
+
+{% block conteudo %}
+<div class="sales-container">
+  <div class="sales-header">
+    <h1>Relatório de Vendas</h1>
+    <div class="sales-summary">
+      <p><strong>Total de vendas:</strong> {{ total_sales }}</p>
+      <p><strong>Receita total:</strong> R$ {{ total_revenue }}</p>
+    </div>
+  </div>
+
+  <div class="sales-graph">
+    <h2>Vendas por Curso</h2>
+    <img src="data:image/png;base64,{{ graph_url }}" alt="Gráfico de Vendas" class="graph-img">
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

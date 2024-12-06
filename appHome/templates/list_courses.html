@@ -1,38 +1,39 @@
 {% extends 'base.html' %}
 
-{% block titulo %} HOME {% endblock %}
-
-{% block navbar %}
-{% endblock %}
+{% block titulo %}Cursos{% endblock %}
 
 {% block conteudo %}
-<div class="d-flex justify-content-center align-items-center min-vh-100 ms-5 me-5">
-  <div class="text-center">
+<div class="container-fluid py-5" style="min-height: 100vh;">
+  <div class="row justify-content-center">
     {% if courses %}
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      {% for course in courses %}
-      <div class="col">
-        <div class="card course-card"> <!-- Adiciona a classe course-card aqui -->
-          <div class="card-body text-start">
-            <h5 class="card-title course-name">{{ course.name }}</h5>
-            <p class="card-text course-author">{{ course.autor }}</p>
-            <p class="card-text course-duration">{{ course.duration }}</p>
-            <p class="card-text course-price">R$ {{ course.price }}</p>
-            <a href="#" class="btn btn-primary btn-buy">Comprar</a>
+    <div class="col-12 col-md-10 col-lg-8">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for course in courses %}
+        <div class="col courses-container">
+          <div class="card course-card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title course-name">{{ course.name }}</h5>
+              <p class="card-text course-author">{{ course.autor }}</p>
+              <p class="card-text course-duration">{{ course.duration }}</p>
+              <p class="card-text course-price">R$ {{ course.price }}</p>
+
+              {% if course.stock > 0 %}
+              <p class="card-text course-stock">Estoque: {{ course.stock }}</p>
+              <a href="{% url 'buy_course' course.id %}" class="btn btn-primary btn-buy">Comprar</a>
+              {% else %}
+              <p>Curso esgotado</p>
+              {% endif %}
+            </div>
           </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
     {% else %}
-    <h1>Nenhum curso cadastrado no momento.</h1>
+    <div class="col-12 text-center">
+      <h1>Nenhum curso cadastrado no momento.</h1>
+    </div>
     {% endif %}
   </div>
 </div>
-
-
-
-{% endblock %}
-
-{% block footer %}
 {% endblock %}
